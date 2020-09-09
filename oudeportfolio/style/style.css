@@ -1,0 +1,1213 @@
+/******************************************* ALGEMEEN *******************************************/
+
+/* - lettertypes -*/
+
+@font-face {
+    font-family: 'PlayfairBold';
+    src: url('lettertype/PlayfairDisplay/PlayfairDisplay-Black.ttf');
+    /* lettertype staat in de map met de website meegestuurt zodat gebruikers die deze lettertypes niet bezitten op de laptop alsnog dit lettertype krijgen te zien op de browser*/
+}
+
+@font-face {
+    font-family: 'PlayfairRegular';
+    src: url('lettertype/PlayfairDisplay/PlayfairDisplay-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'SourceCodeLight';
+    src: url('lettertype/sourcecode/SourceCodePro-Light.ttf');
+}
+
+@font-face {
+    font-family: 'SourceCodeSemibold';
+    src: url('lettertype/sourcecode/SourceCodePro-Semibold.ttf');
+}
+
+
+
+
+* {
+    box-sizing: border-box;
+    /*de breedte is de hele breedte en hoef je niet meer uit te rekenen door margin en padding en border bij elkaar op te tellen dat zit er al in */
+    margin: 0;
+}
+
+h1,
+h2 {
+    font-family: 'PlayfairBold';
+    text-align: center;
+    color: #BB6D3C;
+}
+
+h1 {
+    font-size: 3.0em;
+    letter-spacing: 0.15em;
+}
+
+h2 {
+    font-size: 2.0em;
+
+}
+
+p,
+a {
+    font-family: 'SourceCodeLight';
+    font-size: 1em;
+    text-align: center;
+    color: black;
+}
+
+h3 {
+    font-family: 'SourceCodeSemiBold';
+    color: #BB6D3C;
+}
+
+
+li {
+    list-style: none;
+    /* lijsten hebben nu niet de standaard styling zoals de bullets voor elk listitem*/
+    margin: 0;
+    padding: 0.5em;
+}
+
+body {
+
+        margin-top: 15em;
+    }
+
+@media (min-width: 40em) {
+
+    body {
+
+        margin-top: 5em;
+    }
+}
+
+
+
+
+/*
+.portfolio {
+    -webkit-appearance: none;
+}
+*/
+
+
+
+/******************************************* HEADER *******************************************/
+
+
+
+nav {
+    background-color: #6C836B;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 100;
+}
+
+nav ul {
+    text-align: center;
+}
+
+nav a {
+    letter-spacing: 0.2em;
+    text-decoration: none;
+    /* geen streep onder elke link */
+    color: #FFFF;
+    font-family: 'SourceCodeLight';
+}
+
+nav li:first-child a {
+    font-family: 'PlayfairBold';
+    font-size: 3em;
+    color: transparent;
+    /* zodat de binnenkant geen kleur heeft */
+    -webkit-text-stroke: 0.03em white;
+    /*bron: https://css-tricks.com/almanac/properties/t/text-stroke/ omdat text-stroke alleen niet werkte, op css-tricks stond dat er -webkit- voor moest staan*/
+}
+
+
+
+
+/* pagina waar je op bent */
+
+header a:not([href])
+
+/* bron: hulp via https://css-tricks.com/almanac/selectors/n/not/ met waar ik de :not op moest selecteren, ik zelf maakte de fout met a:not(a href) en dat werkte niet, nu wordt alle linken in de header behalve de links met een ahref gestyled*/
+    {
+    font-family: 'SourceCodeSemibold';
+    padding: 0.3em 0em;
+}
+
+
+
+/* - STATES - */
+
+nav li a:focus
+
+/* als je focused, alsin met de tab of als je op de link klikt gebeurt deze state */
+    {
+    outline: none;
+}
+
+nav li:not(:first-child) a:focus {
+    font-family: 'SourceCodeSemibold';
+    border-bottom: 0.05em solid white;
+}
+
+nav li:first-child a:focus {
+    color: white;
+}
+
+nav li:not(:first-child) a:hover
+
+/* als je over de a gaat met je muis verandert de state */
+    {
+    font-family: 'SourceCodeSemibold';
+}
+
+nav li:first-child a:hover {
+    color: white;
+}
+
+
+/* - NAVIGATIE HOMEPAGINA - */
+
+
+.home nav {
+    background-color: #FFFF;
+}
+
+.home nav a {
+    color: #8EA28D;
+}
+
+.home nav li:first-child a {
+    -webkit-text-stroke: 0.03em #8EA28D;
+}
+
+
+
+/* - RESPONSIVE NAVIGATIE - */
+
+@media (min-width: 40em)
+
+/* als de pagina groter dan 40em wordt dan gaat de css hier verder */
+    {
+
+    ul {
+        display: flex;
+        /*        flex-direction: row;*/
+        align-items: center;
+        margin: 0em 1em;
+    }
+
+    ul li:first-child {
+        flex-grow: 1;
+        text-align: left;
+    }
+}
+
+
+
+
+
+
+
+
+/******************************************* MAIN *******************************************/
+
+/*
+main {
+    margin-top: 5em;
+}
+*/
+
+main img {
+    width: 13em;
+}
+
+ul {
+    padding: 0.2em;
+}
+
+main a {
+    color: #6C836B;
+    text-decoration: none;
+    border-bottom: .05em solid #738196;
+}
+
+/*
+main section {
+    margin: 5em 1em 1em 1em;
+}
+*/
+
+
+.contact main p,
+a {
+    margin: .5em;
+}
+
+.contact main form p {
+    color: white;
+}
+
+
+/* ----- HOMEPAGE ----- */
+
+.home {
+    background-color: #6C836B;
+}
+
+.home {
+    text-align: center
+}
+
+.home main img {
+    margin-top: 1.5em;
+}
+
+
+
+/* -- LINK 'BEKIJK PORTFOLIO' -- */
+
+.home main a {
+    text-decoration: none;
+    padding: 1em 2em;
+    background-color: white;
+    border: none;
+}
+
+.home main a:hover {
+    -webkit-opacity: 0.65;
+    transition: 1.2s;
+}
+
+
+
+/* - LOGO SANNE DUINKER (typografie) - */
+
+.home main h1 {
+    color: transparent;
+    font-size: 3.3rem;
+    -webkit-text-stroke: 0.01em white;
+    letter-spacing: 0em;
+}
+
+
+/* - POSITIONEREN LOGO - */
+
+.home section {
+    position: relative;
+    /* de parent is nu relative zodat ik de elementen binnen section, de h1, nu kan positioneren vanaf de section */
+    margin: auto;
+    /* auto zodat de section nu gecentreerd is en meeschaalt */
+    width: 22em;
+    /* een breedte zodat de section in het midden van de pagina komt */
+}
+
+.home main h1:first-child
+
+/* eerste h1 in de main */
+    {
+    position: absolute;
+    /* positioneert vanaf de section, helemaal uit zijn eigen positie */
+    top: 1.1em;
+    left: 0.4em;
+}
+
+.home main h1 + h1
+
+/*de h1 die na een h1 komt wordt aangepast*/
+    {
+    position: absolute;
+    left: 2.2em;
+    top: 2em;
+}
+
+.home p {
+    color: white;
+    font-size: 0.9em;
+    position: relative;
+    /* verplaats ik vanuit zijn positie*/
+    top: -4em;
+    width: 14em;
+    margin: auto;
+}
+
+
+/* - RESPONSIVE HOMEPAGINA - */
+
+@media (min-width: 40em)
+
+/* als de pagina groter dan 40em wordt dan gaat de css hier verder */
+    {
+
+    .home section {
+        width: 35em;
+    }
+
+    .home main h1 {
+        font-size: 5.5em;
+    }
+
+    .home main img {
+        width: 20em;
+        margin-top: 4em;
+    }
+
+    .home p {
+        font-size: 1em;
+        width: 20em;
+    }
+
+    .home main a {
+        padding: 1em 5.3em;
+    }
+}
+
+@media (min-width: 70em)
+
+/* als de pagina groter dan 70em wordt dan gaat de css hier verder */
+    {
+
+    .home section {
+        width: 47em;
+    }
+
+    .home main h1 {
+        font-size: 7em;
+    }
+
+    .home main img {
+        width: 25em;
+        margin-top: 5.5em;
+    }
+
+    .home p {
+        font-size: 1.1em;
+        width: 20em;
+    }
+
+    .home main a {
+        padding: 1em 7.8em;
+    }
+}
+
+
+
+
+
+
+/************************** ----- DE FILTER ----- ***************************/
+
+main aside p {
+    color: white;
+}
+
+main aside a {
+    background-color: #BB6D3C;
+    border-radius: 0.4em;
+    /* de ronde hoeken om de links heen*/
+    border: none;
+    font-size: 0.9em;
+    margin: 0.3em;
+    cursor: pointer;
+    /* feed forward je weet dat je op de knop kan drukken*/
+    padding: 0.5em;
+
+}
+
+main aside a:not([href]) {
+    cursor: default;
+
+}
+
+main aside a:not([href]) p {
+    font-family: 'SourceCodeSemibold';
+}
+
+
+/* -- STATES -- */
+
+main aside a:focus {
+    outline: none;
+    /* bevat nu niet zo'n schaduw styling om de links die je standaard hebt als je focused of klikt op de links*/
+    background-color: #D69E7C;
+}
+
+main aside a:hover {
+    background-color: #D69E7C;
+}
+
+main aside a:not([href]):hover {
+    background-color: #BB6D3C;
+}
+
+
+
+
+/* - GRID - */
+
+.portfolio main aside {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    /* bron: via https://css-tricks.com/introduction-fr-css-unit/ over repeat gelezen makkelijker dan 3 keer achter elkaar 1fr te typen, bevat nu 3 rijen */
+    grid-template-columns: repeat(3, 1fr);
+    /* bevat nu 3 kolommen van 1fr, fr betekent de ruimte die over is en die wordt ingenomen*/
+    padding: 0.2em 0.8em;
+    max-width: 31.25em;
+    /* de form heeft een maximale breedte zodat de grid niet de hele breedte inneemt van de browser */
+    margin: auto;
+    /* de filter is gecentreerd door margin: auto */
+}
+
+.portfolio main aside h2 {
+    grid-column-start: 1;
+    /* de h2 bij de filter heeft nu de hele bovenste rij ingenomen en begint dus bij plek 1 */
+    grid-column-end: 4;
+    /* en de h2 eindigt bij plek 4 dat houdt in aan het einde van de 3de kolom */
+}
+
+
+
+/* RESPONSIVE FILTER */
+
+@media (min-width: 40em)
+
+/* als de pagina groter dan 40em wordt dan gaat de css hier verder */
+    {
+
+    .portfolio main aside {
+        grid-template-rows: repeat(2, 1fr);
+        /* bevat nu 2 rijen bij een pagina grote van 40em of groter */
+        grid-template-columns: repeat(5, 1fr);
+        /* bevat nu 5 kolommen bij een pagina grote van 40em of groter */
+        max-width: 40em;
+        margin: auto;
+    }
+
+    .portfolio main aside h2 {
+        grid-column-start: 1;
+        grid-column-end: 6;
+    }
+
+    aside a {
+        padding: 0.5em;
+    }
+}
+
+@media (min-width: 70em)
+
+/* als de pagina groter dan 70em wordt dan gaat de css hier verder */
+    {
+
+
+    .portfolio main aside {
+        background-color: #BB6D3C;
+        display: flex;
+        /* flexen van de filter zodat de links onder elkaar komen te staan*/
+        flex-direction: column;
+        /* hierdoor staan nu de links onder elkaar*/
+        align-self: flex-start;
+        /* en de items zijn nu allemaal links uitgelijnd */
+        margin: 5.2em 2em;
+        width: 15em;
+        height: 16em;
+    }
+
+    .portfolio main aside h2 {
+        color: white;
+        text-align: left;
+        border-bottom: .05em solid white;
+    }
+
+    .portfolio main aside p {
+        font-size: 1.3em;
+        text-align: left;
+    }
+
+    .portfolio main aside a {
+        margin: 0.5em;
+        padding: 0em;
+    }
+
+}
+
+
+
+
+/*************************** ----- DE PROJECTEN/OPDRACHTEN ----- ***************************/
+
+main li {
+    position: relative;
+    /* zodat ik de articles vanaf de li kan positioneren*/
+    padding: 0em;
+    overflow: hidden;
+    /* alles wat buiten de listitem valt zie je niet en wordt verborgen */
+}
+
+main section li img {
+    width: 16em;
+    -webkit-opacity: 0.9;
+}
+
+main section li {
+    width: 16em;
+    height: 16em;
+    border: .12em solid #8EA28D;
+}
+
+
+
+
+/* - CONTENT PER VAK - */
+
+li a h2,
+li a p {
+    color: white;
+    margin: 0em 0em;
+}
+
+li a p:nth-child(3)
+
+/*de derde p in de article*/
+    {
+    color: #4D5A46;
+}
+
+li a h2:first-child {
+    font-family: 'PlayfairBold';
+    font-size: 1.5em;
+}
+
+
+
+
+/* - POSITIONEREN CONTENT IN LISTITEM - */
+
+main section li a {
+    position: absolute;
+    bottom: -5em;
+    /* zodat je alleen de titel datum en het vak ziet op je mobiel, de rest valt erbuiten en is dus nu onzichtbaar */
+    right: 0em;
+    left: 0em;
+    background-color: #8EA28D;
+    -webkit-opacity: 0.95;
+    cursor: pointer;
+    /* als je over de article gaat met je muis wordt het een pointer zodat je weet dat je erop kan drukken*/
+}
+
+
+
+/* - STATES - */
+
+main section li,
+main section li img {
+    transition: 1s ease;
+    /* transition bij de grote van de listitem en de afbeelding in de listitem */
+}
+
+main section li a:hover {
+    -webkit-opacity: 0.95;
+    /* de content wordt dan getoond als je eroverheen gaat tot 95% en wordt langzaam steeds helderder door de transition */
+}
+
+main section li:hover,
+main section li:hover img {
+    width: 16.5em;
+    height: 16.5em;
+}
+
+
+
+
+/* - GRID PROJECTEN - */
+
+main section ul {
+    display: grid;
+    /* alle projecten in een grid*/
+    grid-template-columns: 1fr;
+    /* 1 kolom op je telefoon onder elkaar*/
+    grid-row-gap: 1.5em;
+    /* de ruimte tussen de rijen */
+}
+
+.portfolio main section {
+    display: flex;
+    /* flexbox gebruikt om de hele section met de conten te centreren, margin: auto werkte niet */
+    flex-direction: column;
+    /* zodat de h1 en ul nu onder elkaar komt en niet naast elkaar */
+    align-items: center;
+    /* zodat de h1 en de ul in de section zijn gecentreerd*/
+}
+
+
+main section li a {
+    transition: 1s ease;
+    /* transition op het element, niet de elementen met :hover, zodra je eroverheen gaat voert het de transition uit */
+    margin: 0em;
+}
+
+
+
+
+/* - RESPONSIVE PROJECTEN - */
+
+@media (min-width: 40em)
+
+/* als de pagina groter dan 40em wordt dan gaat de css hier verder */
+    {
+
+    main li a h2:first-child {
+        font-size: 1.7em;
+    }
+
+
+
+    /* GRID */
+
+    main section ul {
+        grid-template-columns: 2fr 2fr;
+        /* 2 kolommen naast elkaar bij een grootte van 40em of grotere webbrowser */
+        grid-column-gap: 1.5em;
+        /* de ruimte tussen de kolommen */
+
+    }
+
+
+
+    /* CONTENT PER VAK */
+
+    main li a h2,
+    main li a p {
+        margin: 0.7em 0.12em;
+    }
+
+    main section li a {
+        position: absolute;
+        /* positioneren vanaf de li*/
+        bottom: 0em;
+        left: 0em;
+        right: 0em;
+        top: 0em;
+        /* is nu zo gepositioneerd dat het de hele listitem vult door alles op 0em te zetten*/
+        background-color: #8EA28D;
+        -webkit-opacity: 0;
+        /* is hier nu 0 procent, zodat de content nu nog verborgen is totdat je er met je muis overheen gaat */
+        margin: 0em;
+    }
+}
+
+@media (min-width: 70em)
+
+/* als de pagina groter dan 70em wordt dan gaat de css hier verder */
+    {
+
+    .portfolio main {
+        display: flex;
+        /* flexen van de main zodat de filter en de projecten naast elkaar komen te staan */
+    }
+
+    main section ul {
+        grid-template-columns: 2fr 2fr 2fr;
+        /* 3 kolommen naast elkaar bij een grootte van 70em of grotere webbrowser */
+    }
+
+    main section li a {
+        margin: 0em;
+    }
+}
+
+/*************************** ----- MEER INFO VAK ----- ***************************/
+
+.vak {
+    width: 24em;
+    display: grid;
+    margin: auto;
+    position: relative;
+}
+
+.vak section .mySlides {
+    width: 20.9em;
+    height: 20.9em;
+}
+
+.vak section:first-child {
+    border: 0.1em solid #B2693A;
+    width: 21.1em;
+    height: 21.1em;
+}
+
+/* Slideshow  */
+/*bron slideshow: https://www.w3schools.com/w3css/w3css_slideshow.asp */
+
+
+.w3-left.w3-hover-text-khaki,
+.w3-right.w3-hover-text-khaki {
+    position: absolute;
+    color: white;
+    background-color: #B2693A;
+    padding: 1em;
+}
+
+.w3-left.w3-hover-text-khaki:hover,
+.w3-right.w3-hover-text-khaki:hover {
+    background-color: #B77F5C;
+}
+
+.w3-left.w3-hover-text-khaki {
+    top: 12em;
+    left: 0.09em;
+
+}
+
+.w3-right.w3-hover-text-khaki {
+    top: 12em;
+    left: 18.59em;
+}
+
+
+.w3-left,
+.w3-right,
+.w3-badge {
+    cursor: pointer
+}
+
+
+
+/* - RESPONSIVE PROJECTEN - */
+
+@media (min-width: 40em) {
+
+    .vak {
+        width: 25em;
+    }
+
+    .vak section .mySlides {
+        width: 24.9em;
+        height: 24.9em;
+    }
+
+    .vak section:first-child {
+        width: 25.1em;
+        height: 25.1em;
+    }
+
+    .w3-right.w3-hover-text-khaki {
+        top: 12em;
+        left: 22.59em;
+    }
+
+
+}
+
+@media (min-width: 60em) {
+
+    .vak {
+        width: 60em;
+        display: grid;
+        grid-template-columns: 0fr 1fr;
+        margin: 3em auto;
+    }
+
+
+    .w3-right.w3-hover-text-khaki {
+        top: 12em;
+        left: 22.59em;
+    }
+
+
+}
+
+
+
+
+
+
+/*************************** ----- OVER MIJ ----- ***************************/
+
+.about main img {
+    width: 18em;
+    border-radius: 2.5%;
+    margin: auto;
+    -webkit-opacity: 0.85;
+    text-align: center;
+
+}
+
+h3 {
+    color: white;
+    font-size: 1em;
+}
+
+.about main article p,
+h3 {
+    margin: 0;
+    text-align: left;
+}
+
+.about main section p,
+.about main section h2 {
+    text-align: left;
+}
+
+.about main p,
+.about main h2,
+    {
+    text-align: left;
+    margin: 1em;
+}
+
+.about main section h2:first-child {
+    font-family: 'SourceCodeSemibold';
+    font-size: 1.2em;
+}
+
+main img + img {
+    height: 18em;
+}
+
+/* - GRID - */
+
+.about main {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: auto;
+    /*    margin-top: 5em;*/
+    /* de main is nu gecentreerd in het midden*/
+    width: 22em;
+    /* een breedte zodat niet de hele breedte van de browser wordt ingenomen*/
+}
+
+
+/* ---- POSITIONEREN article ---- */
+
+.about main section {
+    position: relative;
+    margin: 1em;
+    /* nu kan ik de article positioneren vanaf de section*/
+}
+
+.about main section article {
+    position: absolute;
+    top: 16.5em;
+    left: 2.1em;
+}
+
+.about main section article p {
+    margin-left: 5.7em;
+    margin-bottom: 1.65em;
+}
+
+
+/* - RESPONSIVE - */
+
+@media (min-width: 55em)
+
+/* als de pagina groter dan 55em wordt dan gaat de css hier verder */
+    {
+
+    main img + img
+
+    /* de img die na een img komt in de main worden nu gestyled*/
+        {
+        height: 17.4em;
+    }
+
+    .about main img {
+        width: 25em;
+        margin: 0em 15em;
+    }
+
+    .about main {
+        width: 58em;
+    }
+
+    /* - POSITIONEREN - */
+
+    .about main section article {
+        top: 1.5em;
+        left: 30.1em;
+    }
+
+}
+
+
+
+
+
+/******************** ---- FORMULIER ----- ******************/
+
+form fieldset {
+    padding: .5em;
+    border: none;
+    margin: 1em;
+    color: white;
+    font-family: 'SourceCodeLight';
+    max-width: 20em;
+    max-height: 37em;
+}
+
+
+main form legend {
+    font-family: 'SourceCodeSemiBold';
+    font-size: 1.2em;
+    position: relative;
+    top: 1em;
+    margin: 1em 0em;
+}
+
+form input[type="text"],
+form input[type="email"] {
+    width: 17em;
+    height: 2em;
+    font-family: 'SourceCodeLight';
+    font-size: 1em;
+    color: #707D91;
+}
+
+textarea {
+    font-family: 'SourceCodeLight';
+    font-size: .8em;
+}
+
+
+form fieldset input {
+    transition: all 1s ease;
+}
+
+
+main form label {
+    font-size: 1em;
+}
+
+form fieldset,
+fieldset p {
+    text-align: left;
+}
+
+
+
+/* - VERZENDKNOP - */
+
+input[type="submit"]
+
+/* alleen de input met een attribute type="submit" */
+    {
+
+    font-family: 'SourceCodeSemiBold';
+    font-size: 1em;
+    background-color: white;
+    border-radius: .2em;
+    border: none;
+    color: #3F4B3F;
+    margin: 1em auto;
+    padding: .5em 1em;
+    /*    -webkit-appearance: none;*/
+}
+
+
+/* -- DE TEKST/INPUTVELDEN -- */
+
+form input:not([type="radio"]),
+textarea {
+    border: none;
+    margin: 1em 0em 1em 1em;
+    outline: none;
+}
+
+form fieldset label[for="subject"]
+
+/* alleen de label met een attribute for="subject" */
+    {
+    display: block;
+}
+
+
+form input,
+form label,
+textarea,
+form fieldset p {
+    margin: 1em;
+}
+
+form fieldset input,
+form fieldset textarea {
+    display: block;
+}
+
+
+#copy,
+#appointment,
+#question,
+#other
+
+/* # is het aanroepen van de id attribute */
+    {
+    display: inline;
+}
+
+
+
+
+/*  -- STATES -- */
+
+form input:focus,
+textarea:focus {
+    border: .1em solid #98A398;
+    background-color: #D6E0D6;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus {
+    width: 18em;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: #D6E0D6;
+    border: .05em solid #98A398;
+}
+
+fieldset:valid
+
+/* als alle required inputs zijn ingevuld wordt de achtergrond kleur van de fieldset de kleur die hier wordt aangegeven*/
+    {
+    background-color: #3F4B3F;
+}
+
+fieldset:invalid
+
+/* als alle required inputs nog niet zijn ingevuld wordt de achtergrond kleur van de fieldset de kleur die hier wordt aangegeven */
+    {
+    background-color: #6C836B;
+}
+
+input[type="radio"]:checked + label
+
+/* via: https://css-tricks.com/almanac/selectors/c/checked/, vergeten + label te doen waardoor het eerst niet werkte, checked is wanneer je zoals bij een radio button de radiobutton aangevinked is */
+    {
+    font-family: 'SourceCodeSemiBold';
+}
+
+
+/* - GRID FORMULIER - */
+
+.contact form {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* 1 kolom op telefoon onder elkaar*/
+}
+
+.contact main {
+    display: flex;
+    /* zodat het meeschaalt responsive en in het midden blijft */
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+/* RESPONSIVE */
+
+
+@media (min-width: 55em)
+
+/* als de pagina groter dan 55em wordt dan gaat de css hier verder */
+    {
+
+    form fieldset {
+        max-width: 35em;
+        max-height: 37em;
+    }
+
+    form input:not([name="choice"])
+
+    /* alle inputs behalve degene met attribute name="choice" */
+    ,
+    textarea {
+        display: block;
+    }
+
+    input[type="submit"] {
+        margin: 1em;
+    }
+
+    #copy,
+    #appointment,
+    #question,
+    #other {
+        margin-right: 0em;
+    }
+
+    form fieldset:nth-child(2) label:not([for="subject"]):not([for="message"]) {
+        margin-left: 0em;
+
+    }
+
+    /* - GRID FORMULIER - */
+
+    .contact form {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 koloms nu staan de 2 fieldsets naast elkaar*/
+    }
+
+}
+
+
+
+
+
+
+/******************************************* FOOTER *******************************************/
+
+footer {
+    background-color: #5F6E5E;
+    text-align: center;
+    padding: 0.5em;
+}
+
+footer p {
+    color: white;
+    margin: 0.5em;
+    font-size: 1em;
+    font-family: 'SourceCodeSemiBold';
+
+}
+
+footer p:nth-child(2) {
+    font-family: 'SourceCodeSemiBold';
+}
+
+footer img {
+    width: 2em;
+}
+
+footer a {
+    margin: 0.2em;
+}
+
+
+
+/* - FOOTER AAN ONDERKANT BROWSWER  - */
+/* Bron: via https://css-tricks.com/couple-takes-sticky-footer/ bij kopje #there is grid */
+
+html {
+    height: 100%;
+    /* de hoogte van de html is 100%, de hele hoogte van de browser*/
+}
+
+body {
+    min-height: 100%;
+    /* de body heeft een minimale hoogte van 100% zodat de footer dus onderaan in de body staat, onderaan de browser */
+    display: grid;
+    grid-template-rows: 0fr auto;
+}
+
+.footer {
+    grid-row-start: 30;
+    /* de footer begint helemaal onderaan de browser en dus ook helemaal onderaan de rij */
+}

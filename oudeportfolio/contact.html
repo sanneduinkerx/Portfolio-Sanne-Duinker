@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact | Sanne Duinker</title>
+    <link rel="stylesheet" href="style/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- meta Viewport zodat het op de telefoon beter schaalt en mooier overkomt, bron: https://www.w3schools.com/css/css_rwd_viewport.asp-->
+
+</head>
+
+<body class="contact">
+
+    <header>
+
+        <!-- NAVIGATIE-->
+
+        <nav>
+            <ul>
+                <li><a href="index.html">SD</a></li>
+                <li><a href="Portfolio.html">Portfolio</a></li>
+                <li><a href="About.html">Over Mij</a></li>
+                <li><a>Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <h1>Contact</h1>
+        <p>Heeft u vragen of wilt u een afspraak maken? Neem dan gerust contact met mij op!</p>
+
+
+        <!-- HET CONTACT FORMULIER -->
+
+        <form action="mailto:sanne@duinker.eu" method="post" aria-label="Contact">
+            <!-- heeft formulier toch een naam, via https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute. Bevat method=Post omdat dit toegevoegd zou worden aan een database-->
+
+            <!-- Formulier via boek HTML&CSS van Jon Duckett geleerd, bladzijde 146 t/m 172-->
+
+            <fieldset>
+                <!-- om het formulier op te delen in 2 groepen-->
+
+                <legend> Persoonlijke gegevens </legend> <!-- naam van groep 1-->
+
+                <label for="firstname">Voornaam</label> <!-- label bij de input zodat het toegankelijk is voor iedereen-->
+                <input type="text" name="firstname" required> <!-- required, geeft aan bij drukken op de verzend knop wanneer veld leeg is dat je dat nog moet invullen anders wordt het niet verstuurt-->
+
+                <label for="surname">Achternaam</label>
+                <input type="text" name="surname" required>
+
+                <label for="phonenumber">Telefoonnummer - optioneel</label>
+                <input type="text" name="phonenumber">
+
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" required> <!-- type="email" zodat bij verzenden van het formulier wordt aangegeven en gechecked of het wel een email is met @ en .nl bijvoorbeeld-->
+
+            </fieldset>
+
+
+            <fieldset>
+
+                <legend>Bericht</legend> <!-- naam van groep 2-->
+
+                <p>Waarvoor wil je een bericht sturen?</p>
+
+
+                <!-- RADIO BUTTONS -->
+
+                <input type="radio" id="appointment" name="choice" value="Afspraak" checked="checked"> <!-- type="radio" is een radiobutton, id van input matched met for van label zodat de webbrowser kan zien welke label bij welke input hoort, en checked is welke radio button bij het refreshen van de pagina aangevinked is. En value is de naam die naar de server wordt gestuurd-->
+                <label for="appointment">Afspraak</label>
+
+                <input type="radio" id="question" name="choice" value="Vraag">
+                <label for="question">Vraag</label>
+
+
+                <input type="radio" id="other" name="choice" value="Anders">
+                <label for="other">Anders</label>
+
+
+                <!-- HET BERICHT -->
+
+                <label for="subject">Onderwerp</label>
+                <input type="text" id="subject" name="subject" required>
+
+                <label for="message"> Bericht</label>
+                <textarea name="bericht" id="message" cols="33" rows="8" placeholder="Schrijf hier je bericht..." required></textarea>
+
+
+                <!-- VERZENDKNOP EN CHECKBOX -->
+
+
+                <input type="submit" name="send" value="verzenden">
+
+            </fieldset>
+
+        </form>
+
+
+
+        <p>Amsterdam, Nederland</p>
+        <p><a href="mailto:sanne@duinker.eu">sanne@duinker.eu</a></p> <!-- mailto: voor het verzenden van een email gehaald via het boek HTML&CSS, websites ontwerpen en bouwen van Jon Duckett op bladzijde 84 hoofdstuk 4 -->
+        <p>06 49413492</p>
+
+
+
+    </main>
+
+
+
+    <footer>
+
+        <p>&copy; 2020 Sanne Duinker</p>
+        <p> Follow me on Social Media </p>
+
+        <!-- de social media icons onderaan de pagina -->
+
+        <a href="https://www.instagram.com/sanneduinkerx/"><img src="images/socials-icon.png" alt=""></a>
+        <a href="https://nl.pinterest.com/sanneduinker/"> <img src="images/socials-icon2.png" alt=""></a>
+        <a href="https://www.facebook.com/sanne.duinker"> <img src="images/socials-icon3.png" alt=""></a>
+
+    </footer>
+
+</body>
+
+</html>
